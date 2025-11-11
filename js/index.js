@@ -17,10 +17,10 @@ setInterval(() => {
 combineLatest([money, currentDate]).subscribe(([money, currentDate]) => {
     const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
     const daysLeft = daysInMonth - currentDate.getDate();
-    const hoursLeft = daysLeft * 24;
+    const weeksLeft = Math.ceil(daysLeft / 7);
 
     const dailyBudget = money / daysLeft;
-    const weeklyBudget = dailyBudget * 7;
+    const weeklyBudget = money / weeksLeft;
     const hourlyBudget = dailyBudget / 24;
 
     document.getElementById("daily-budget").textContent = dailyBudget.toFixed(2);
