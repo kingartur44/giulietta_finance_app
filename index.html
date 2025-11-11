@@ -8,8 +8,6 @@
         
         <link rel="manifest" href="manifest.json">
 
-		<script async src="js/index.js"></script>
-
         <script>
             if ('serviceWorker' in navigator) {
               window.addEventListener('load', () => {
@@ -26,27 +24,42 @@
 		<div>
 			<h1>Giulietta Finance App</h1>
 			<h3 class="normal-text">Il tuo budget giornaliero è:</h3>
-			<h1>8,75€</h1>
+			<h1><span id="daily-budget">8,75</span>€</h1>
 			<h3 class="normal-text">Il tuo budget settimanale è:</h3>
-			<h1>8,75€</h1>
+			<h1><span id="weekly-budget">8,75</span>€</h1>
 			<h3 class="normal-text">Il tuo budget orario è:</h3>
-			<h1>8,75€</h1>
-			<h3 class="normal-text">Il tuo budget al minuto è:</h3>
-			<h1>8,75€</h1>
+			<h1><span id="hourly-budget">8,75</span>€</h1>
 		</div>
 
 		<div>
-			<h1>Adesso hai nel conto</h1>
-			<div>
-				<input value="30,23"/>
-				<span>€</span>
-			</div>
-			<div>
-				<button>-1€</button>
-				<button>-2€</button>
-				<button>-5€</button>
-				<button>-10€</button>
+			<h3>Adesso hai nel conto</h3>
+			<h1><span id="actual-money">0</span>€</h1>
+			<div class="buttons-container">
+				<button onclick="changeMoney(-1)">-1€</button>
+				<button onclick="changeMoney(-2)">-2€</button>
+				<button onclick="changeMoney(-5)">-5€</button>
+				<button onclick="changeMoney(-10)">-10€</button>
+				<button onclick="changeMoney(-20)">-20€</button>
+				<button onclick="changeMoney(-50)">-50€</button>
+
+				<button onclick="changeMoney(+1)">+1€</button>
+				<button onclick="changeMoney(+2)">+2€</button>
+				<button onclick="changeMoney(+5)">+5€</button>
+				<button onclick="changeMoney(+10)">+10€</button>
+				<button onclick="changeMoney(+20)">+20€</button>
+				<button onclick="changeMoney(+50)">+60€</button>
+
+				<button onclick="setMoney(1)">=1€</button>
+				<button onclick="setMoney(2)">=2€</button>
+				<button onclick="setMoney(5)">=5€</button>
+				<button onclick="setMoney(10)">=10€</button>
+				<button onclick="setMoney(20)">=20€</button>
+				<button onclick="setMoney(50)">=50€</button>
 			</div>
 		</div>
 	</body>
+
+	
+	<script src="js/rxjs.js" ></script>
+	<script src="js/index.js" ></script>
 </html>
