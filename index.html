@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+        
+        <link rel="manifest" href="manifest.json">
+
+		<script async src="bundle.min.js"></script>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                  .then(reg => console.log('Service Worker registered:', reg))
+                  .catch(err => console.error('Service Worker failed:', err));
+              });
+            }
+        </script>
+
+		<title>Giulietta Finance App</title>
+	</head>
+	<body>
+		<div>
+			<h1>Giulietta Finance App</h1>
+			<h3 class="normal-text">Il tuo budget giornaliero è:</h3>
+			<h1>8,75€</h1>
+			<h3 class="normal-text">Il tuo budget settimanale è:</h3>
+			<h1>8,75€</h1>
+			<h3 class="normal-text">Il tuo budget orario è:</h3>
+			<h1>8,75€</h1>
+			<h3 class="normal-text">Il tuo budget al minuto è:</h3>
+			<h1>8,75€</h1>
+		</div>
+
+		<div>
+			<h1>Adesso hai nel conto</h1>
+			<div>
+				<input value="30,23"/>
+				<span>€</span>
+			</div>
+			<div>
+				<button>-1€</button>
+				<button>-2€</button>
+				<button>-5€</button>
+				<button>-10€</button>
+			</div>
+		</div>
+	</body>
+</html>
