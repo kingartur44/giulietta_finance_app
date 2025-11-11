@@ -21,7 +21,7 @@ body {
 .buttons-container {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-	margin: 0 20%;
+	margin: 0 auto;
 	gap: 8px;
 }
 
