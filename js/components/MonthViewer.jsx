@@ -47,24 +47,24 @@ export function MonthViewer({ year, month, goLeft, goRight }) {
         </button>
 
         <h1>Storico</h1>
-        <div style={{display: "flex", justifyContent: "center"}}>
+        <div style={{width: "100%", overflowX: "scroll"}}>
             <table className="nes-table is-bordered is-centered">
                 <thead>
                     <tr>
                         <th>Data</th>
-                        <th>Categoria</th>
                         <th>Ammontare</th>
+                        <th>Categoria</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {history.map(transaction => {
+                    {history.reverse().map(transaction => {
                         return <tr key={transaction.id}>
                             <td>{transaction.creationTime}</td>
-                            <td>{transaction.label}</td>
                             <td style={{color: transaction.amount < 0 ? "red" : "green"}}>
                                 {transaction.amount} €
                             </td>
+                            <td>{transaction.label}</td>
                             <td>
                                 <button className="nes-btn is-error" onClick={() => deleteTransaction({id: transaction.id})}>
                                     Elimina

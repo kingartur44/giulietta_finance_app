@@ -20,13 +20,16 @@ body {
 }
 
 h1 {
-	font-size: 20px;
+	font-size: 21px;
 }
 h2 {
-	font-size: 17px;
+	font-size: 18px;
 }
 h3 {
-	font-size: 14px;
+	font-size: 15px;
+}
+td, th {
+	font-size: 13px;
 }
 
 
@@ -40,9 +43,6 @@ h3 {
 }
 
 .month-content {
-	width: 100%;
-	height: 100vh;
-
 	text-align: center;
 	position: relative;
 }
