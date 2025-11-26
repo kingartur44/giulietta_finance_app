@@ -120,10 +120,10 @@ export function TransactionCreator({addTransaction, close}) {
             </div>
 
             <h2>Tipo</h2>
-            <button disabled={isNegative} style={{paddingRight: 8}} className={"nes-btn " + (isNegative ? "is-disabled" : "")} onClick={() => setIsNegative(true)}>
+            <button disabled={isNegative} style={{paddingRight: 8}} className={"nes-btn " + (isNegative ? "is-primary" : "")} onClick={() => setIsNegative(true)}>
                 Spesa
             </button>
-            <button disabled={!isNegative} className={"nes-btn " + (isNegative ? "" : "is-disabled")} onClick={() => setIsNegative(false)}>
+            <button disabled={!isNegative} className={"nes-btn " + (isNegative ? "" : "is-primary")} onClick={() => setIsNegative(false)}>
                 Guadagno
             </button>
         

@@ -11,7 +11,7 @@
 html,
 body {
 	margin: 0;
-	padding: 0;
+	padding: 16px;
 	height: 100%;
 	-webkit-user-select: none;
 	user-select: none;
@@ -51,7 +51,6 @@ td, th {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	padding: 16px;
 }
 
 .normal-text {
@@ -62,5 +61,4 @@ td, th {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
-	margin: 16px;
 }
