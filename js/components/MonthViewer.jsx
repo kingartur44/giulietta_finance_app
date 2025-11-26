@@ -102,6 +102,7 @@ export function TransactionCreator({addTransaction, close}) {
         <div style={{marginBottom: 8}}>
             <h1 style={{color: isNegative ? "red" : "green"}}>{amount} €</h1>
             <div className="buttons-container">
+                2
                 <button className="nes-btn" onClick={() => setAmount(old => old - 1)}>-1€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old - 2)}>-2€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old - 5)}>-5€</button>
