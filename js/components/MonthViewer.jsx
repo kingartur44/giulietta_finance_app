@@ -79,10 +79,22 @@ export function MonthViewer({ year, month, goLeft, goRight }) {
 }
 
 export function TransactionCreator({addTransaction, close}) {
-
     const [amount, setAmount] = React.useState(0)
     const [label, setLabel] = React.useState("Generica")
     const [isNegative, setIsNegative] = React.useState(true)
+
+    React.useEffect(() => {
+        const handleBackButton = () => {
+            close();
+            return true;
+        };
+
+        document.addEventListener("backbutton", handleBackButton, false);
+
+        return () => {
+            document.removeEventListener("backbutton", handleBackButton, false);
+        };
+    }, [close]);
 
     return <div style={{display: "flex", flexDirection: "column", textAlign: "center"}}>
         <h1>Crea nuova transazione</h1>
