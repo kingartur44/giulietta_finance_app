@@ -117,14 +117,6 @@ export function TransactionCreator({addTransaction, close}) {
                 <button className="nes-btn" onClick={() => setAmount(old => old + 20)}>+20€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old + 50)}>+50€</button>
             </div>
-            <div className="buttons-container">
-                <button className="nes-btn" onClick={() => setAmount(1)}>=1€</button>
-                <button className="nes-btn" onClick={() => setAmount(2)}>=2€</button>
-                <button className="nes-btn" onClick={() => setAmount(5)}>=5€</button>
-                <button className="nes-btn" onClick={() => setAmount(10)}>=10€</button>
-                <button className="nes-btn" onClick={() => setAmount(20)}>=20€</button>
-                <button className="nes-btn" onClick={() => setAmount(50)}>=50€</button>
-            </div>
 
             <h2>Tipo</h2>
             <button disabled={isNegative} style={{paddingRight: 8}} className={"nes-btn " + (isNegative ? "is-disabled" : "")} onClick={() => setIsNegative(true)}>
@@ -146,6 +138,7 @@ export function TransactionCreator({addTransaction, close}) {
 
                     <option value="Stipendio">Stipendio</option>
                     <option value="Arca Arca">Arca Arca</option>
+                    <option value="Aggiusto Conto">Aggiusto Conto</option>
                 </select>
             </div>
         
