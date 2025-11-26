@@ -83,18 +83,19 @@ export function TransactionCreator({addTransaction, close}) {
     const [label, setLabel] = React.useState("Generica")
     const [isNegative, setIsNegative] = React.useState(true)
 
-    React.useEffect(() => {
-        const handleBackButton = () => {
-            close();
-            return true;
+    useEffect(() => {
+        const handleBackButton = (e) => {
+            e.preventDefault();
+            // Logica personalizzata per la gestione del back
+            close()
         };
 
-        document.addEventListener("backbutton", handleBackButton, false);
+        window.addEventListener('popstate', handleBackButton);
 
         return () => {
-            document.removeEventListener("backbutton", handleBackButton, false);
+            window.removeEventListener('popstate', handleBackButton);
         };
-    }, [close]);
+    }, [history, close]);
 
     return <div style={{display: "flex", flexDirection: "column", textAlign: "center"}}>
         <h1>Crea nuova transazione</h1>
