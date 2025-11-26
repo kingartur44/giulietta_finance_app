@@ -83,7 +83,7 @@ export function TransactionCreator({addTransaction, close}) {
     const [label, setLabel] = React.useState("Generica")
     const [isNegative, setIsNegative] = React.useState(true)
 
-    useEffect(() => {
+    React.useEffect(() => {
         const handleBackButton = (e) => {
             e.preventDefault();
             close()
