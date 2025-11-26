@@ -19,12 +19,6 @@ body {
 	text-align: center;
 }
 
-.month-window {
-	display: flex;
-	width: 100%;
-	height: 100vh;
-}
-
 .button {
 	font-size: 200%;
 	font-weight: bold;
@@ -35,7 +29,9 @@ body {
 }
 
 .month-content {
-	flex: 1;
+	width: 100%;
+	height: 100vh;
+
 	text-align: center;
 	position: relative;
 }

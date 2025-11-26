@@ -14,68 +14,66 @@ export function MonthViewer({ year, month, goLeft, goRight }) {
         return <TransactionCreator addTransaction={addTransaction} close={() => setIsCreatingTransaction(false)} />
     }
 
-    return <section className="month-window">
-        <div className="button left-button" onClick={goLeft}>
-            &lt; &lt;
-        </div>
-
-        <div className="month-content">
-            <div>
+    return <section className="month-content">
+        <div>
+            <div style={{display: "flex", justifyContent: "center", gap: 16}}>
+                <div className="button" onClick={goLeft}>
+                    &lt; &lt;
+                </div>
                 <h1>{monthLabel} {year}</h1>
-
-                <div className="budget-list">
-                    <div className="nes-container with-title is-centered is-rounded">
-                        <h3 className="title">Budget mensile</h3>
-                        <h1>{total.toFixed(2)} €</h1>
-                    </div>
-                    <div className="nes-container with-title is-centered is-rounded">
-                        <h3 className="title">Budget settimanale</h3>
-                        <h1>{weeklyBudget.toFixed(2)} €</h1>
-                    </div>
-                    <div className="nes-container with-title is-centered is-rounded">
-                        <h3 className="title">Budget giornaliero</h3>
-                        <h1>{dailyBudget.toFixed(2)} €</h1>
-                    </div>
+                <div onClick={goRight} className="button">
+                    &gt; &gt;
                 </div>
             </div>
             
-            <button className="nes-btn is-primary" onClick={() => setIsCreatingTransaction(true)}>
-                Crea nuova <br/> transazione
-            </button>
-
-            <h1>Storico</h1>
-            <div style={{display: "flex", justifyContent: "center"}}>
-                <table className="nes-table is-bordered is-centered">
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Categoria</th>
-                            <th>Ammontare</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {history.map(transaction => {
-                            return <tr key={transaction.id}>
-                                <td>{transaction.creationTime}</td>
-                                <td>{transaction.label}</td>
-                                <td style={{color: transaction.amount < 0 ? "red" : "green"}}>
-                                    {transaction.amount} €
-                                </td>
-                                <td>
-                                    <button className="nes-btn is-error" onClick={() => deleteTransaction({id: transaction.id})}>
-                                        Elimina
-                                    </button>
-                                </td>
-                            </tr>
-                        })}
-                    </tbody>
-                </table>
+            <div className="budget-list">
+                <div className="nes-container with-title is-centered is-rounded">
+                    <h3 className="title">Budget mensile</h3>
+                    <h1>{total.toFixed(2)} €</h1>
+                </div>
+                <div className="nes-container with-title is-centered is-rounded">
+                    <h3 className="title">Budget settimanale</h3>
+                    <h1>{weeklyBudget.toFixed(2)} €</h1>
+                </div>
+                <div className="nes-container with-title is-centered is-rounded">
+                    <h3 className="title">Budget giornaliero</h3>
+                    <h1>{dailyBudget.toFixed(2)} €</h1>
+                </div>
             </div>
         </div>
+        
+        <button className="nes-btn is-primary" onClick={() => setIsCreatingTransaction(true)}>
+            Crea nuova <br/> transazione
+        </button>
 
-        <div onClick={goRight} className="button right-button">
-            &gt; &gt;
+        <h1>Storico</h1>
+        <div style={{display: "flex", justifyContent: "center"}}>
+            <table className="nes-table is-bordered is-centered">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Categoria</th>
+                        <th>Ammontare</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {history.map(transaction => {
+                        return <tr key={transaction.id}>
+                            <td>{transaction.creationTime}</td>
+                            <td>{transaction.label}</td>
+                            <td style={{color: transaction.amount < 0 ? "red" : "green"}}>
+                                {transaction.amount} €
+                            </td>
+                            <td>
+                                <button className="nes-btn is-error" onClick={() => deleteTransaction({id: transaction.id})}>
+                                    Elimina
+                                </button>
+                            </td>
+                        </tr>
+                    })}
+                </tbody>
+            </table>
         </div>
     </section>
 }
