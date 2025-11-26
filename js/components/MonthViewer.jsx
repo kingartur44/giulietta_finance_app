@@ -83,21 +83,6 @@ export function TransactionCreator({addTransaction, close}) {
     const [label, setLabel] = React.useState("Generica")
     const [isNegative, setIsNegative] = React.useState(true)
 
-    React.useEffect(() => {
-        history.pushState("", "", "");
-
-        const handleBackButton = (e) => {
-            e.preventDefault();
-            close()
-        };
-
-        window.addEventListener('popstate', handleBackButton);
-
-        return () => {
-            window.removeEventListener('popstate', handleBackButton);
-        };
-    }, [close]);
-
     return <div style={{display: "flex", flexDirection: "column", textAlign: "center"}}>
         <h1>Crea nuova transazione</h1>
 
