@@ -19,7 +19,7 @@ function StartScreen() {
     const year = currentDate.getFullYear()
 
     return <div>
-        <h1 style={{textAlign: "center"}}>Giulietta Finance App</h1>
+        <h1 className="nes-text is-primary" style={{textAlign: "center"}}>Giulietta Finance App</h1>
         <MonthViewer key={`${year}-${month}`} goLeft={goLeft} goRight={goRight} month={month} year={year} />
     </div>
 }

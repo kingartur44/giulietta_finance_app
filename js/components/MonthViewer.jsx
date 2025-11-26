@@ -28,15 +28,15 @@ export function MonthViewer({ year, month, goLeft, goRight }) {
             
             <div className="budget-list">
                 <div className="nes-container with-title is-centered is-rounded">
-                    <h3 className="title">Budget mensile</h3>
+                    <h3 className="title nes-text is-primary">Budget mensile</h3>
                     <h1>{total.toFixed(2)} €</h1>
                 </div>
                 <div className="nes-container with-title is-centered is-rounded">
-                    <h3 className="title">Budget settimanale</h3>
+                    <h3 className="title nes-text is-primary">Budget settimanale</h3>
                     <h1>{weeklyBudget.toFixed(2)} €</h1>
                 </div>
                 <div className="nes-container with-title is-centered is-rounded">
-                    <h3 className="title">Budget giornaliero</h3>
+                    <h3 className="title nes-text is-primary">Budget giornaliero</h3>
                     <h1>{dailyBudget.toFixed(2)} €</h1>
                 </div>
             </div>
@@ -96,14 +96,16 @@ export function TransactionCreator({addTransaction, close}) {
                 <button className="nes-btn" onClick={() => setAmount(old => old - 10)}>-10€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old - 20)}>-20€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old - 50)}>-50€</button>
-                
+            </div>
+            <div className="buttons-container">
                 <button className="nes-btn" onClick={() => setAmount(old => old + 1)}>+1€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old + 2)}>+2€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old + 5)}>+5€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old + 10)}>+10€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old + 20)}>+20€</button>
                 <button className="nes-btn" onClick={() => setAmount(old => old + 50)}>+50€</button>
-
+            </div>
+            <div className="buttons-container">
                 <button className="nes-btn" onClick={() => setAmount(1)}>=1€</button>
                 <button className="nes-btn" onClick={() => setAmount(2)}>=2€</button>
                 <button className="nes-btn" onClick={() => setAmount(5)}>=5€</button>

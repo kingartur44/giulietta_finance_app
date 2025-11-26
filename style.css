@@ -19,6 +19,17 @@ body {
 	text-align: center;
 }
 
+h1 {
+	font-size: 20px;
+}
+h2 {
+	font-size: 17px;
+}
+h3 {
+	font-size: 14px;
+}
+
+
 .button {
 	font-size: 200%;
 	font-weight: bold;
@@ -48,13 +59,8 @@ body {
 }
 
 .buttons-container {
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	margin: 0 8px;
+	display: flex;
+	flex-wrap: wrap;
 	gap: 8px;
-	row-gap: 32px;
-}
-
-.buttons-container button {
-	font-size: 125%;
+	margin: 16px;
 }
