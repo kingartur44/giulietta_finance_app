@@ -24,6 +24,11 @@ function StartScreen() {
     </div>
 }
 
+
+if ('storage' in navigator && 'persist' in navigator.storage) {
+    navigator.storage.persist().then(isPersisted => console.log(isPersisted ? "Persistent storage granted" : "Persistent storage NOT granted"));
+}  
+
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(<StartScreen />);

@@ -23,17 +23,17 @@ export function MonthViewer({ year, month, goLeft, goRight }) {
             <div>
                 <h1>{monthLabel} {year}</h1>
 
-                <div class="budget-list">
-                    <div class="nes-container with-title is-centered is-rounded">
-                        <h3 class="title">Budget mensile</h3>
+                <div className="budget-list">
+                    <div className="nes-container with-title is-centered is-rounded">
+                        <h3 className="title">Budget mensile</h3>
                         <h1>{total.toFixed(2)} €</h1>
                     </div>
-                    <div class="nes-container with-title is-centered is-rounded">
-                        <h3 class="title">Budget settimanale</h3>
+                    <div className="nes-container with-title is-centered is-rounded">
+                        <h3 className="title">Budget settimanale</h3>
                         <h1>{weeklyBudget.toFixed(2)} €</h1>
                     </div>
-                    <div class="nes-container with-title is-centered is-rounded">
-                        <h3 class="title">Budget giornaliero</h3>
+                    <div className="nes-container with-title is-centered is-rounded">
+                        <h3 className="title">Budget giornaliero</h3>
                         <h1>{dailyBudget.toFixed(2)} €</h1>
                     </div>
                 </div>
@@ -46,26 +46,30 @@ export function MonthViewer({ year, month, goLeft, goRight }) {
             <h1>Storico</h1>
             <div style={{display: "flex", justifyContent: "center"}}>
                 <table className="nes-table is-bordered is-centered">
-                    <tr>
-                        <th>Data</th>
-                        <th>Categoria</th>
-                        <th>Ammontare</th>
-                        <th></th>
-                    </tr>
-                    {history.map(transaction => {
-                        return <tr key={transaction.id}>
-                            <td>{transaction.creationTime}</td>
-                            <td>{transaction.label}</td>
-                            <td style={{color: transaction.amount < 0 ? "red" : "green"}}>
-                                {transaction.amount} €
-                            </td>
-                            <td>
-                                <button className="nes-btn is-error" onClick={() => deleteTransaction({id: transaction.id})}>
-                                    Elimina
-                                </button>
-                            </td>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Categoria</th>
+                            <th>Ammontare</th>
+                            <th></th>
                         </tr>
-                    })}
+                    </thead>
+                    <tbody>
+                        {history.map(transaction => {
+                            return <tr key={transaction.id}>
+                                <td>{transaction.creationTime}</td>
+                                <td>{transaction.label}</td>
+                                <td style={{color: transaction.amount < 0 ? "red" : "green"}}>
+                                    {transaction.amount} €
+                                </td>
+                                <td>
+                                    <button className="nes-btn is-error" onClick={() => deleteTransaction({id: transaction.id})}>
+                                        Elimina
+                                    </button>
+                                </td>
+                            </tr>
+                        })}
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -119,7 +123,7 @@ export function TransactionCreator({addTransaction, close}) {
             </button>
         
             <h2>Categoria spesa</h2>
-            <div class="nes-select">
+            <div className="nes-select">
                 <select onChange={(e) => setLabel(e.target.value)}>
                     <option value="Generica">Generica</option>
                     <option value="Spesa">Spesa</option>
