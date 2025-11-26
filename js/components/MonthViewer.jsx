@@ -86,7 +86,6 @@ export function TransactionCreator({addTransaction, close}) {
     useEffect(() => {
         const handleBackButton = (e) => {
             e.preventDefault();
-            // Logica personalizzata per la gestione del back
             close()
         };
 
@@ -95,7 +94,7 @@ export function TransactionCreator({addTransaction, close}) {
         return () => {
             window.removeEventListener('popstate', handleBackButton);
         };
-    }, [history, close]);
+    }, [close]);
 
     return <div style={{display: "flex", flexDirection: "column", textAlign: "center"}}>
         <h1>Crea nuova transazione</h1>
